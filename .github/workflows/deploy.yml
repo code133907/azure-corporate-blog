@@ -12,20 +12,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       
-    - name: Upload files to Azure Storage
+    - name: Upload single file test
       run: |
         az storage blob upload \
-          --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
-          --container-name \$web \
+          --account-name "${{ secrets.AZURE_STORAGE_ACCOUNT }}" \
+          --account-key "${{ secrets.AZURE_STORAGE_KEY }}" \
+          --container-name '\$web' \
           --file index.html \
-          --name index.html \
-          --auth-mode key \
-          --account-key ${{ secrets.AZURE_STORAGE_KEY }}
-        
-        az storage blob upload \
-          --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
-          --container-name \$web \
-          --file 404.html \
-          --name 404.html \
-          --auth-mode key \
-          --account-key ${{ secrets.AZURE_STORAGE_KEY }}
+          --name index.html
