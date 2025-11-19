@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Corporate Blog</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .post { border-bottom: 1px solid #ccc; padding: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Our Corporate Blog</h1>
+    <div class="post">
+        <h2>First Blog Post</h2>
+        <p>This is our first post on our resilient Azure-hosted blog!</p>
+        <small>Published: <span id="date1"></span></small>
+    </div>
+    <div class="post">
+        <h2>Cloud Journey</h2>
+        <p>Learning Azure one project at a time...</p>
+        <small>Published: <span id="date2"></span></small>
+    </div>
+    <script>
+        document.getElementById('date1').textContent = new Date().toLocaleDateString();
+        document.getElementById('date2').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
